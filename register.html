@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Registration - Viscose</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="hero-bar">
+        <a href="home.html" class="logo">Viscose</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="buy.html">Buy Tickets</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="our-events.html">Our Events</a></li>
+                <li><a href="events.html">Future Events</a></li>
+                <li><a href="lucky-draws.html">Lucky Draws</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="register">
+        <h2>Team Registration</h2>
+        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">Register your team for Hyderabad's biggest youth sporting tournaments. Choose your sport and package below.</p>
+        
+        <div class="registration-options">
+            <!-- Football Registration -->
+            <div class="registration-card">
+                <div class="registration-header">
+                    <span class="sport-icon">⚽</span>
+                    <h3>Football Team Registration</h3>
+                </div>
+                <div class="registration-price">
+                    <span class="price-amount">₹3,500</span>
+                    <span class="price-label">Per Team</span>
+                </div>
+                <div class="registration-details">
+                    <p class="format-info"><strong>Format:</strong> 7-A-Side (5 players + 2 substitutes)</p>
+                    <div class="includes-section">
+                        <h4>Includes:</h4>
+                        <ul class="benefits-list">
+                            <li>Guaranteed minimum of 2 matches</li>
+                            <li>Access to fixtures, standings & live updates</li>
+                            <li>Captain's briefing & rules session</li>
+                            <li>Eligibility for Team of the Tournament</li>
+                            <li>Access to player facilities & hydration partner zone</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="cta-button register-btn" data-sport="football" data-price="3500" data-format="7-A-Side (5 players + 2 substitutes)">Register Football Team</button>
+            </div>
+
+            <!-- Basketball Registration -->
+            <div class="registration-card">
+                <div class="registration-header">
+                    <span class="sport-icon">🏀</span>
+                    <h3>Basketball Team Registration</h3>
+                </div>
+                <div class="registration-price">
+                    <span class="price-amount">₹1,500</span>
+                    <span class="price-label">Team of 3 players</span>
+                </div>
+                <div class="registration-details">
+                    <p class="format-info"><strong>Format:</strong> 3v3 Tournament (3 players + 2 substitutes)</p>
+                    <div class="price-options">
+                        <div class="price-option">
+                            <span class="option-price">₹1,500</span>
+                            <span class="option-desc">Team of 3 players</span>
+                        </div>
+                        <div class="price-option">
+                            <span class="option-price">₹2,200</span>
+                            <span class="option-desc">Team of 3 players + 2 substitutes</span>
+                        </div>
+                    </div>
+                    <div class="includes-section">
+                        <h4>Includes:</h4>
+                        <ul class="benefits-list">
+                            <li>Minimum 2 guaranteed matches</li>
+                            <li>Access to fixtures, standings & player zone</li>
+                            <li>Eligibility for Fast Break Challenges</li>
+                            <li>Access to Decathlon gear booth & Prime hydration zone</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="basketball-buttons">
+                    <button class="cta-button register-btn" data-sport="basketball" data-price="1500" data-format="3v3 (3 players)" data-option="3 players">Register - ₹1,500</button>
+                    <button class="cta-button register-btn" data-sport="basketball" data-price="2200" data-format="3v3 (3 players + 2 substitutes)" data-option="5 players">Register - ₹2,200</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Form Modal -->
+        <div id="registration-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modal-title">Team Registration</h2>
+                <p id="modal-subtitle" class="modal-subtitle"></p>
+                <form id="registration-form">
+                    <input type="hidden" id="selected-sport" name="sport">
+                    <input type="hidden" id="selected-price" name="price">
+                    <input type="hidden" id="selected-format" name="format">
+                    <input type="hidden" id="selected-option" name="option">
+                    
+                    <div class="form-group">
+                        <label for="team-name">Team Name *</label>
+                        <input type="text" id="team-name" name="team-name" required placeholder="Enter your team name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="captain-name">Captain Name *</label>
+                        <input type="text" id="captain-name" name="captain-name" required placeholder="Enter captain's full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="captain-email">Captain Email *</label>
+                        <input type="email" id="captain-email" name="captain-email" required placeholder="Enter captain's email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="captain-phone">Captain Phone Number *</label>
+                        <input type="tel" id="captain-phone" name="captain-phone" required placeholder="Enter captain's phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="players-count">Number of Players *</label>
+                        <input type="number" id="players-count" name="players-count" required min="3" max="7" placeholder="Enter number of players">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="players-names">Player Names (comma-separated) *</label>
+                        <textarea id="players-names" name="players-names" required placeholder="Enter all player names separated by commas (e.g., Player 1, Player 2, Player 3...)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additional-info">Additional Information</label>
+                        <textarea id="additional-info" name="additional-info" placeholder="Any special requests or information about your team..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit">Complete Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-meta">
+            <p>Made By Kavish Tolani</p>
+            <p>All rights reserved Viscose 2025</p>
+        </div>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="shipping.html">Shipping (8-14 Days)</a>
+            <a href="cancellation-refund.html">Cancellation &amp; Refund</a>
+            <a href="contact-9clothing.html">Contact Us</a>
+        </div>
+    </footer>
+</body>
+</html>
